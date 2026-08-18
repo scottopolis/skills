@@ -1,4 +1,4 @@
-# YouTube Research Providers
+# YouTube Scraper Providers
 
 Provider behavior and pricing can change. Re-check linked documentation before a large collection run.
 

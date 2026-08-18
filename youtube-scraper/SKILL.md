@@ -1,9 +1,9 @@
 ---
-name: researching-youtube-ideas
+name: youtube-scraper
 description: Researches YouTube channels and videos to develop evidence-backed content ideas using channel metrics, metadata, transcripts, and comments. Use for competitor research, topic discovery, audience-question mining, or YouTube video ideation without downloading videos.
 ---
 
-# Researching YouTube Ideas
+# YouTube Scraper
 
 Build a traceable research corpus before proposing video ideas. Use public data and APIs rather than downloading video files.
 

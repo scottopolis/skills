@@ -16,7 +16,7 @@ npx skills add scottopolis/skills --skill optimizing-prompts
 
 Turns rough prompts into clear, effective instructions while preserving the original intent.
 
-### `researching-youtube-ideas`
+### `youtube-scraper`
 
 Researches YouTube channels, videos, transcripts, and comments to develop evidence-backed content ideas, with a free workflow when no API key is available.
 
