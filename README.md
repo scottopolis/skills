@@ -12,6 +12,11 @@ npx skills add scottopolis/skills --skill optimizing-prompts
 
 ## Available skills
 
+### `developing-content`
+
+Runs a Notion-based content factory for AI business articles and YouTube videos, covering ideation,
+research, separate outlines, creator-draft review, and explanatory visuals.
+
 ### `optimizing-prompts`
 
 Turns rough prompts into clear, effective instructions while preserving the original intent.
