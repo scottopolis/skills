@@ -1,6 +1,6 @@
 ---
 name: developing-content
-description: Runs a Notion-based video content factory for AI business content. Use for idea discovery, source-specific research and video outlines, draft review, explanatory visuals, continuing a video project, or deciding the next step.
+description: Researches high-performing social content into a Notion Idea, then turns the creator's Rough Draft into an Edited Draft while preserving their voice. Use for topic discovery, social post and transcript research, organizing a stream-of-consciousness draft, or suggesting additions, hooks, titles, visuals, and media.
 license: MIT
 mcpServers:
   notion:
@@ -19,159 +19,127 @@ mcpServers:
       - API-retrieve-a-data-source
       - API-create-a-comment
       - API-retrieve-a-comment
-      - API-move-page
 ---
 
 # Developing Content
 
-Run the video Content Factory entirely in Notion. It has four agent actions: **ideation**,
-**develop outline**, **review**, and **visuals**. Human writing is the gate between outline and review.
+Run a focused, Idea-based content workflow in Notion:
+
+1. research high-performing social content into `Initial Research`;
+2. wait for the creator to add their stream of consciousness to `Rough Draft`; and
+3. create `Edited Draft` in the creator's words, with clearly separated agent suggestions.
+
+Do not create projects, inboxes, outlines, reviews, or separate visual pages.
 
 ## Workspace
 
-Use these stable IDs instead of discovering duplicate databases by title:
+Use these stable Notion IDs:
 
 - Content Factory root: `3c1bebc7-23c3-815e-b7d6-ea7518b07858`
 - Ideas database: `3c1bebc7-23c3-81ef-bf32-f6cf57b95833`
 - Ideas data source: `3c1bebc7-23c3-8196-9bda-000bd5f9a53d`
-- Projects database: `3c1bebc7-23c3-81ec-80c3-f0f09419af14`
-- Projects data source: `3c1bebc7-23c3-81ed-b3d3-000be85c4c0b`
 
-Notion is the source of truth for ideas, video outlines, creator drafts, reviews, and visual plans.
-Do not create or update a parallel repository copy.
+Notion is the source of truth. Do not create a parallel repository copy.
 
-## Audience and roles
+Ideas use `Name`, `Status`, `Topic`, `Profile`, and `Created`. Use only `New`, `Selected`,
+`Parked`, and `Discarded`.
+
+Each Idea owns these child pages:
+
+- `Initial Research` — agent-generated source research
+- `Rough Draft` — creator-generated stream of consciousness or transcript
+- `Edited Draft` — agent-edited version of Rough Draft
+
+Keep requested visual or media URLs directly on the Idea page under `## Visuals and media`.
+
+## Audience and ownership
 
 The primary audience is business owners and team leaders over 40 at medium-to-large businesses.
-Build credibility around implementing AI in real organizations, not maximum generic reach.
+Favor useful specificity about implementing AI in real organizations over generic reach. When
+relevant, include adoption, permissions, privacy, security, compliance, governance, integration,
+reliability, ownership, measurement, and scaling beyond a pilot.
 
-The creator owns idea selection, angle, thesis, opinions, final wording, and publication decisions.
-The creator writes the `Video Draft`. The agent discovers ideas, researches concrete source material,
-creates a potential `Video Outline`, reviews the creator's draft below it on the same page, and creates
-explanatory visuals. Do not write or rewrite the creator's draft unless explicitly asked.
-
-When relevant, extend individual AI workflows into team and company concerns: rollout, adoption,
-permissions, privacy, security, compliance, governance, integration, reliability, change management,
-ownership, support, measurement, and scaling beyond a pilot. Prefer useful specificity and
-target-audience relevance over novelty or raw popularity.
+The creator owns idea selection, angle, thesis, opinions, stories, examples, final wording, and
+publication decisions. The agent owns source research, organization, grammar cleanup, and optional
+suggestions. Never silently turn an agent inference or source claim into the creator's opinion.
 
 ## Start every request
 
-1. Identify the requested action, topic, or project from the user's words.
-2. Query the Ideas and Projects data sources and fetch the relevant pages and comments.
-3. If the user says “continue” or asks what is next, infer the action from the artifacts below.
-4. If more than one action or project is plausible, ask one focused question listing the options.
-   Do not ask the user to repeat information already in Notion.
+1. Determine whether the creator supplied a topic, requested topic suggestions, selected an Idea,
+   or asked to edit a Rough Draft.
+2. Query Ideas and read the relevant Idea, child pages, and comments. Do not ask for information
+   already in Notion.
+3. If several Ideas match, ask one focused question listing the choices.
+4. Perform only the requested phase. Do not silently proceed from research into drafting.
 
-Infer the next action as follows:
+## Research a topic or discover one
 
-- A new topic, trend discovery, or supporting signals are needed: **ideation**.
-- A selected idea has no substantive `Video Outline`: **develop outline**.
-- A substantive outline exists but no creator draft exists: stop at the human writing gate.
-- A creator-written draft needs critique: **review**.
-- A substantive creator draft needs diagrams: **visuals**.
+1. Inspect available source-specific social search and scraping skills before using generic web
+   search. Search platforms where titles or opening text, engagement, and transcripts are available.
+2. Find a small set of representative posts with visible evidence of performance. Record platform,
+   creator, URL, publication date, collection date, and visible views, likes, comments, shares, or
+   other metrics. If performance cannot be observed, label it `performance unverified`; do not call
+   it high-performing. Treat raw metrics cautiously across accounts and platforms.
+3. Read or transcribe enough of each source to understand its actual content, not just its title.
+   Verify quotations and distinguish source claims, established facts, and agent inference.
+4. Analyze each useful source:
+   - exact title or post opening
+   - hook mechanism and promise
+   - angle or point of view
+   - concise transcript/content summary with main argument, examples, and payoff
+   - visible performance and relevance
+5. Synthesize repeated hooks, common angles, audience questions, contradictions, gaps, and places
+   where the creator can add original experience.
+6. Return the strongest candidates with possible titles, hooks, and angles. Link every source.
+   Treat titles and hooks as inspiration, not text to copy.
+7. Deduplicate against existing Ideas. Create or update an Idea with `Status: New` and store the full
+   source roundup and synthesis in its `Initial Research` child page. Keep the Idea page itself clear
+   except for child pages and visual or media links.
 
-## Notion conventions
+Do not select an Idea unless the creator asks.
 
-Ideas use `Name`, `Status`, `Topic`, `Profile`, and `Created`. Use only the existing status options:
-`New`, `Selected`, `Parked`, and `Discarded`.
+## Prepare a selected Idea
 
-Projects use `Name`, `Status`, and `Profile`. Use only `In progress`, `Complete`, and `Parked`.
-Keep a project `In progress` while developing it. Mark it `Complete` or `Parked` only when the creator
-decides.
+1. Mark the Idea `Selected`.
+2. Ensure `Initial Research` contains the completed research.
+3. Ensure `Rough Draft` exists with only a short instruction for the creator to paste a
+   stream-of-consciousness transcript, use a Notion transcription block, or attach accessible audio.
+4. Stop at the creator writing gate. Never write Rough Draft for the creator.
 
-For future work, create only these child pages as needed: `Video Outline`, `Video Draft`, and
-`Visuals`. Do not create `Brief`, `Research`, any article page, or a separate review page. Preserve
-existing legacy pages and projects; read them when useful, but do not update them unless asked.
+## Create Edited Draft
 
-Keep agent feedback under a `## Review` heading on `Video Draft`. Everything above that heading is
-creator-owned. Read the full page and its comments before editing it, and confine review updates to
-the section below that heading. Never replace or edit the creator's draft while reviewing it.
+1. Read the Idea, comments, `Initial Research`, `Rough Draft`, and existing `Edited Draft`.
+2. Accept creator-written text, a Notion transcription block, or audio that available tools can
+   access and transcribe. If Rough Draft is not substantive or audio is inaccessible, stop and say
+   what the creator needs to add. Do not invent a draft from research alone.
+3. Treat `Rough Draft` as immutable creator source material. Never clean, clear, move, or replace it.
+4. Identify the creator's thesis, opinions, stories, examples, intended audience, and natural turns
+   of phrase. Correct obvious transcription errors only when context makes the correction clear.
+5. Reorder the material into a coherent progression. Remove verbal filler and accidental repetition;
+   clean grammar, punctuation, and transitions. Preserve meaning, uncertainty, characteristic
+   wording, and first-person voice. Mark unresolved ambiguity with a concise bracketed note.
+6. Create `Edited Draft` under the same Idea. Its first section contains only the cleaned and
+   organized creator material.
+7. Add `## Agent Suggestions` after the draft. Keep every agent-originated addition there:
+   - optional additions grounded in Initial Research
+   - where each addition could fit and what it contributes
+   - source links and verification caveats
+   - possible titles and opening hooks aligned with the actual draft
+   - overpromising or click-promise risks
+8. Prefer a small set of high-value suggestions. Do not turn this into an outline or generic review.
 
-Prefer targeted Markdown updates. Full replacement is acceptable only for a leaf document page.
-Never replace the Content Factory root, a database, or a project parent page, and never enable
-content deletion to force an update.
+If `Edited Draft` already contains substantive creator edits, do not replace it without explicit
+permission. Offer a new version or targeted update.
 
-## Source collection
+## Visuals and media
 
-Before ideation or outline development, inspect available skills for source-specific search or
-scraping tools. Prefer specialist tools when they provide better transcripts, authorship, dates, or
-visible engagement metrics. Fall back to web search for uncovered sources.
-
-Research a small number of specific transcripts, posts, and articles deeply enough to understand
-their actual content. Preserve the original URL, creator or publisher, publication date, collection
-date, and visible engagement metrics when available. Prefer primary sources. Clearly distinguish
-facts, source claims, and agent inference. Verify quotations against the source. Link every material
-factual claim to supporting evidence, and note uncertainty or conflicting evidence.
-
-Keep research proportional. A few representative credible examples are normally enough. Go deeper
-only when the creator asks or a central claim cannot otherwise be supported.
-
-## Ideation
-
-Goal: add sourced ideas and supporting signals to the Ideas database.
-
-1. Search existing ideas and projects before collecting anything new.
-2. Look for repeated audience questions, unusual claims, strong engagement, recent developments,
-   contradictions, and gaps in existing coverage.
-3. Deduplicate related findings. Add support to an existing idea instead of creating a duplicate.
-4. Create an Ideas item with `Status: New`, metadata properties, and concise sections for the signal,
-   why it matters now, audience problem, possible angle, sources, open questions, related work, and
-   agent assessment.
-5. End with the strongest candidates. Do not select an idea or create a project unless the creator
-   explicitly delegates selection.
-
-## Develop outline
-
-Goal: turn a selected idea and specific source material into a potential video structure.
-
-1. Use the idea selected by the creator. If none is selected, present the strongest relevant options
-   and ask the creator to choose.
-2. Mark the idea `Selected`. Create one Projects item with `Status: In progress` and a `Video Outline`
-   child page. Do not create a separate brief or research page.
-3. Read a small set of relevant transcripts, posts, and articles. Investigate audience questions,
-   concrete examples, disagreements, limitations, gaps in existing coverage, and the evidence needed
-   for the video's central claim.
-4. Put the useful source analysis directly into `Video Outline`: viewer promise, potential titles and
-   hook, audience problem and angle, source notes with links and what each source supports, ordered
-   segments with evidence and examples, demonstrations and visual opportunities, gaps or
-   uncertainty, payoff, and next step.
-5. Do not create draft prose or a script. Stop at the human writing gate and state that the creator's
-   `Video Draft` is next.
-
-## Review
-
-Goal: give specific editorial feedback without replacing the creator's voice.
-
-1. Read `Video Draft`, `Video Outline`, their comments, and the linked primary sources needed to
-   verify material claims.
-2. Preserve everything above `## Review`. Add or update feedback only below that heading on the same
-   `Video Draft` page. Never create a separate review page.
-3. Quote or precisely identify the affected passage. Separate factual errors, structural problems,
-   missing material, and optional editorial preferences. Explain the issue and suggest a direction.
-4. Assess click-promise alignment, hook, pacing, audience assumptions, open loops, demonstrations,
-   transitions, re-hooks, payoff, next step, and factual support.
-5. Include a small number of fitting title or hook options when useful and disclose overpromising
-   risk. Prioritize the smallest set of changes that materially improves the video.
-
-## Visuals
-
-Goal: create explanatory diagrams from the creator's substantive video draft.
-
-1. Read `Video Draft`, including its review section. Choose concepts where a diagram explains a
-   relationship, process, comparison, or state change better than narration or ordinary B-roll.
-2. Create or update `Visuals` with the draft location, concept, diagram plan, and output filename.
-3. Create one focused Excalidraw diagram per concept when the environment supports it. Otherwise
-   create a reviewable SVG or image. Attach finished assets to the Visuals page when possible; if an
-   upload tool is unavailable, return the file to the creator and record its filename on the page.
-4. Prefer fewer elements, black strokes, no color fills, minimal text, and strong hierarchy. Use all
-   caps only for the H1 title. Keep text inside its boxes. Route arrows through open space so they do
-   not cross shapes or text.
-5. Do not create decorative diagrams.
+When the creator requests visual or media support, add links directly under `## Visuals and media`
+on the Idea page. Do not create a `Visuals` child page. Link only relevant assets or references and
+briefly state what each supports.
 
 ## Finish every action
 
-- State which Notion items and pages were created or updated.
-- State unresolved factual questions and creator decisions.
-- Do not silently proceed into another action.
-- Do not publish content or alter creator-owned prose unless explicitly requested.
+- Give useful research or editing outcomes in the response, not only a Notion link.
+- State which Idea and child pages were created or updated.
+- State unverified performance, transcript gaps, factual questions, and creator decisions.
+- Do not publish or alter Rough Draft.

@@ -14,8 +14,8 @@ npx skills add scottopolis/skills --skill optimizing-prompts
 
 ### `developing-content`
 
-Runs a Notion-based video content factory covering ideation, source-specific research and outlines,
-review beneath the creator's draft, and explanatory visuals.
+Researches high-performing social content into an Idea's `Initial Research`, then turns the
+creator's `Rough Draft` into a separate `Edited Draft`. Visual and media links stay on the Idea.
 
 ### `optimizing-prompts`
 
