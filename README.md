@@ -19,7 +19,8 @@ creator's `Rough Draft` into a separate `Edited Draft`. Visual and media links s
 
 ### `optimizing-prompts`
 
-Turns rough prompts into clear, effective instructions while preserving the original intent.
+Implements and reviews lean system prompts with clear scope, trusted sources, tool rules, failure
+paths, safe boundaries, and targeted evals.
 
 ### `youtube-scraper`
 
