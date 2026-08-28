@@ -22,6 +22,12 @@ mcpServers:
 Find what is working, understand why, and preserve the useful evidence in a short research page.
 Research only; do not create drafts, visual concepts, or publication plans.
 
+## Platform References
+
+Read [reference/youtube.md](reference/youtube.md) before researching YouTube. It contains the
+platform-specific discovery, transcript, comment, and provider workflow. Keep platform mechanics in
+reference files so this skill's research process and deliverable remain consistent.
+
 ## Research
 
 1. Clarify the topic and intended audience. Search existing Ideas before creating a duplicate.
