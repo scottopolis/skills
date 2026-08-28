@@ -9,9 +9,11 @@ Set the topic, target viewer, language or region, time window, and desired sampl
 sets a subscriber threshold or other filter, verify it rather than silently relaxing it.
 
 Search with several narrow queries. Search both channels and videos, then combine recent,
-high-view, and topic-matched videos instead of trusting one ranking. Riley Brown, Peter Yang, Simon
-Scrapes, and Nate Herk are useful starting points when relevant, not a required or complete list.
-Deduplicate channels by channel ID and videos by video ID.
+high-view, and topic-matched videos instead of trusting one ranking. Select primarily for relevance
+to owners of $1M+ businesses and leaders at larger companies, not raw view potential. Riley Brown,
+Peter Yang, Simon Scrapes, and Nate Herk are useful starting points, but their audiences often skew
+toward indie founders or developers. Borrow useful ideas and evidence without inheriting that
+audience or framing. Deduplicate channels by channel ID and videos by video ID.
 
 ## Choose a Collection Method
 
