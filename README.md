@@ -7,24 +7,20 @@ Simple, reusable skills for AI agents.
 Install a specific skill with the [Skills CLI](https://skills.sh):
 
 ```sh
-npx skills add scottopolis/skills --skill optimizing-prompts
+npx skills add scottopolis/skills --skill researching-content
 ```
 
 ## Available skills
 
-### `developing-content`
+### `researching-content`
 
-Researches high-performing social content into an Idea's `Initial Research`, then turns the
-creator's `Rough Draft` into a separate `Edited Draft`. Visual and media links stay on the Idea.
+Researches popular videos, their hooks, content, and revealing audience comments, then saves a
+concise source-linked report beneath an Idea.
 
 ### `optimizing-prompts`
 
 Implements and reviews lean system prompts with clear scope, trusted sources, tool rules, failure
 paths, safe boundaries, and targeted evals.
-
-### `youtube-scraper`
-
-Researches YouTube channels, videos, transcripts, and comments to develop evidence-backed content ideas, with a free workflow when no API key is available.
 
 ## License
 
