@@ -7,12 +7,12 @@ Simple, reusable skills for AI agents.
 Install a specific skill with the [Skills CLI](https://skills.sh):
 
 ```sh
-npx skills add scottopolis/skills --skill researching-content
+npx skills add scottopolis/skills --skill content-research
 ```
 
 ## Available skills
 
-### `researching-content`
+### `content-research`
 
 Researches popular videos, their hooks, content, and revealing audience comments, then saves a
 concise source-linked report beneath an Idea.

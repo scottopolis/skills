@@ -1,5 +1,5 @@
 ---
-name: researching-content
+name: content-research
 description: Researches popular videos by analyzing their hooks, actual content, and revealing audience comments. Use for content research, topic discovery, or finding evidence-backed audience angles.
 license: MIT
 mcpServers:
@@ -17,7 +17,7 @@ mcpServers:
       - API-update-page-markdown
 ---
 
-# Researching Content
+# Content Research
 
 Find what is working, understand why, and preserve the useful evidence in a short research page.
 Research only; do not create drafts, visual concepts, or publication plans.
